@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title> CCTC | EVENT PLANNER</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        h2{
+              color: #ff69b4; 
+              font-size: 40px; 
+              font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+              letter-spacing: 0.4rem;
+        }
+        h3{
+            color: #ff69b4; 
+              font-size: 40px; 
+              font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+              letter-spacing: 0.4rem;
+              padding-left: 20vh;
+        }
+        h4{
+            color: white;
+            padding-left: 20vh;
+            max-width: 900px;
+        }
+        p{
+            font-size: 20px;
+            color: white;
+           
+        }
+        .section-divider{
+            border-top: 1px solid #a09e9e; /* Adjust the color and thickness as needed */
+         margin: 20px 0; /* Adjust the margin as needed */
+        }
+       
+        .btn{
+            margin-top: 10px;
+            
+        }
+        #gallery{
+            margin-top: 30vh;
+
+        }
+        #img2-container{
+            position: relative;
+            display: flex;
+            margin-top: 5vh;
+            margin-bottom: 20vh;
+        }
+        .img2{
+            position: relative;
+            display: flex!important;
+            margin-top: 5vh;
+            margin-bottom: 20vh;
+        }
+        #img2-container:hover{
+            cursor: pointer;
+            background-color: rgba(20, 25, 28, .76)!important;
+        }
+        #img2-container img{
+            margin: 0;
+            width: 33.4%;
+            max-width: 100%;
+        }
+        #team{
+            margin-top: 20vh;
+            margin-bottom: 20vh;
+        }
+        #img3-container{
+            object-fit: cover;
+            object-position: center;
+             height: 400px;
+        }
+        .img3{
+            object-fit: cover;
+            object-position: center;
+             height: 400px!important;
+             width: 350px!important;
+             margin-top: 5vh;
+        }
+        .container{
+            font-size: 10em;
+            
+        }
+        #gallery h1{
+            color: #ff69b4;
+            letter-spacing: 0.4rem;
+            padding-left: 20vh;
+        }
+        #img2-container {
+    display: flex;
+}
+
+.img-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+.img-container:hover .image-overlay {
+    opacity: 1;
+}
+
+.img-container img {
+    width: 100%;
+    height: auto;
+    transition: filter 0.3s ease; /* Smooth transition */
+}
+
+.img-container:hover img {
+    filter: brightness(70%); /* Darken the image on hover */
+}
+
+      
+
+        
+     
+    </style>
+    
+  </head>
+  <body>
+    
+    
+      <!-- jQuery -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+      <!-- Bootstrap JS (include Popper.js) -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  
+      <!-- Bootstrap Datepicker JS -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+  
+      <!-- Bootstrap Timepicker JS -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
+  
+
+
+
+      
+    
+   
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html">
+                <span class="firstword" style="color: white;">EVENT</span>
+                <span class="space"> </span>
+                <span class="sec-word">PLANNER</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="color: #ff69b4;">
+        <span class="navbar-toggler-icon" style="background-color: #ff69b4;"></span>
+    </button>
+    
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="home.html">HOME</a>
+                    </li>
+                    <li class="nav-item dropdown show">
+                        <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">EVENT</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="event.html">EVENTS</a></li>
+                            <li><a class="dropdown-item" id="makePlanLink" href="#">MAKE PLAN</a></li>
+                            
+                        </ul>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white"  onclick="location.href='#gallery'">GALLERY</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="contact.html">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home">
+        <img id="background-img" src="images/cctc.jpg" alt="Event Image">
+        <div class="text-container">
+            <p class="slogan">DISCOVER THE ART <br>
+                 OF EVENT PLANNING.</p>
+            <p class="subslogan">At CCTC Event Planner, we bring your plans to life.<br>
+                 So, let's create unforgettable moments
+                together.</p>
+                <button class="btn1" type="button" onclick="location.href='event.html'" id="makePlanLink">GET STARTED</button>   
+        </div>
+        <div class="modal" id="makePlanModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" style="color: #ff69b4; letter-spacing: 0.4rem; padding-left: 8rem;">MAKE PLAN</h3>
+                        <button type="button" class="close" id="closeBtn" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Your form goes here -->
+                        <div id="successMessage" class="alert alert-success" role="alert" style="display: none;"></div>
+                        <form id="contactForm" onsubmit="submitForm(event)">
+                            <div class="form-group">
+                                <label for="userType" style="color: white;">User Type:</label>
+                                <select class="form-control" id="userType" required>
+                                    <option value="student">STUDENT</option>
+                                    <option value="teacher">TEACHER</option>
+                                </select>
+                            </div>
+                            <br>
+                            <label for="title" style="color: white;">Event Title:</label>
+                            <input id="title" class="form-control" type="text" required>
+                            <br>
+                            <label for="date" style="color: white;">Event Date:</label>
+                            <input id="date" type="text" class="form-control" id="eventDate" required>
+                            <br>
+                            <label for="eventTime" style="color: white;">Event Time:</label>
+                            <input id="time" class="form-control" type="text" aria-label="default input example" required>
+                            <br>
+                            <label for="exampleFormControlTextarea1" style="color: white;">Description:</label>
+                            <textarea id="messageInput" class="form-control" rows="3" required></textarea>
+                            <br>
+                            <button class="btn" type="submit" style="color: white; background-color: #ff69b4;">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                
+                    <h1 style="color: #ff69b4!important; letter-spacing: 0.4rem;">ABOUT US</h1>
+                    <div class="section-divider"></div>
+                    <p>Welcome to CCTC Event Planner, where creativity meets celebration! Our journey began with a simple yet powerful vision – to turn every school event into a masterpiece of memories.</p>
+                    <p>At CCTC, we believe in the magic of well-planned events. Whether it's the excitement of a school dance, the camaraderie of a fundraiser, or the pride of a graduation ceremony, we are here to weave those moments into the fabric of your school experience.</p>
+                    
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+        <section id="gallery">
+            <h1>GALLERY</h1>
+            <h4>Here are our latest events</h4>
+                <div id="img2-container">
+                    <img class="img2" src="images/night.jpg" alt="Night Event">
+                    <div class="image-overlay" id="overlayOne"><p id="contentOne" style="color: #ff69b4;"></p>hi</div>
+
+                    <img class="img2" src="images/day.jpg" alt="Day Event">
+                    <div class="image-overlay" id="overlayTwo"><p id="contentTwo" style="color: #ff69b4;"></p>hi</div>
+
+                    <img class="img2" src="images/noon.jpg" alt="Noon Event">
+                    <div class="image-overlay" id="overlayThree"><p id="contentThree"></p>hi</div>
+                </div>
+           
+
+            
+        </section>
+
+        <section id="team">
+            <div class="container">
+                <div id="teamTitle">
+                    <h1 data-aos="fade-up" data-aos-delay="100" data-aos-duration="500" class="text-uppercase text-primary aos-init aos-animate" style="color: #ff69b4!important;letter-spacing: 0.4rem;">our team</h1>
+                    <h1 data-aos="fade-up" data-aos-delay="150" data-aos-duration="500" class="text-white mb-4 aos-init aos-animate">Meet our Team of Experts</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 aos-init aos-animate" data-aos="fade-right" data-aos-delay="250" data-aos-duration="700">
+                        <div class="d-flex flex-column align-items-center" id="team-member">
+                            <img class="img3" src="images/jeric.jpg" alt="Team Member" class="img-fluid mb-4">
+                            <h1 class="text-capitalize text-white mb-2" style="margin-top: 5vh;">Jeric Aligato</h1>
+                            <h5 class="text-uppercase text-primary" style="color: #ff69b4!important;">Product Manager</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-4 aos-init aos-animate" data-aos="fade-right" data-aos-delay="400" data-aos-duration="700">
+                        <div class="d-flex flex-column align-items-center" id="team-member">
+                            <img class="img3" src="images/gaks.jpg" alt="Team Member" class="img-fluid mb-4">
+                            <h1 class="text-capitalize text-white mb-2" style="margin-top: 5vh;">Joemarie Gako</h1>
+                            <h5 class="text-uppercase text-primary" style="color:#ff69b4!important">Programmer</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-4 aos-init aos-animate" data-aos="fade-right" data-aos-delay="600" data-aos-duration="700">
+                        <div class="d-flex flex-column align-items-center" id="team-member">
+                            <img class="img3" src="images/mitch.jpg" alt="Team Member" class="img-fluid mb-4">
+                            <h1 class="text-capitalize text-white mb-2" style="margin-top: 5vh;">Mitch Tundag</h1>
+                            <h5 class="text-uppercase text-primary" style="color: #ff69b4!important;">Video Editor</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+          
+        <script src="script.js"></script>
+        
+       
+  </body>
+  <footer style="background-color: rgba(11, 11, 11, 0.9); color: white; padding: 20px 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <p style="font-size: 18px; margin-left: 10px;">
+
+                    <span style="color: white; font-size: 30px;">Event</span>
+                    <span style="color: #ff69b4; font-size: 30px;">Planner</span>
+                
+                </p>
+            </div>
+            <div class="col-md-6">
+                <p class="text-right" style="font-size: 18px; margin-right: 10px;">
+                    &copy; 2023     <span style="font-size: 30px; color: WHITE;">CCTC | </span> <span style="color: white; font-size: 30px;">E</span><span style="color: #ff69b4; font-size: 30px;">P</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+  
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>EVENT PLANNER | CONTACT</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: white!important;
+        }
+
+        nav {
+            background-color: #343a40;
+            color: white;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white !important;
+        }
+
+        h1 {
+            color:#ff69b4;
+            font-size: 50px;
+            text-align: center;
+            margin-top: 160px;
+            letter-spacing: 0.4rem;
+        }
+        p{
+            color: white;
+        }
+
+        #contact-info {
+            text-align: center;
+            color: #555;
+            margin-top: 100px;
+        }
+
+        #contact-info p {
+            margin: 5px 0;
+        }
+
+        #contact {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 70px;
+            margin-bottom: 100px;
+            
+        }
+
+        #contactForm {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #contactForm label {
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        #contactForm input,
+        #contactForm textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #contactForm button {
+            background-color:#121212;
+            color: white;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        #contactForm button:hover {
+            background-color:#333;
+        }
+
+        #message {
+            text-align: center;
+            color: #4285f4;
+        }
+        .section-divider {
+            border-top: 1px solid #a09e9e; /* Adjust the color and thickness as needed */
+            margin: 20px auto; /* Center the divider and adjust the margin as needed */
+            width: 60%; /* Adjust the width as needed */
+            margin-top: 50px;
+            
+        }#socialIcons{
+            width: 10%;
+            height: 10%;
+            margin: 0 auto;
+            margin-top: 2rem;
+            display: flex;
+            gap: 20px;
+            cursor: pointer;
+            
+        }
+
+
+      
+    </style>
+    <script src="script.js"></script>
+</head>
+<body>
+       
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap JS (include Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Datepicker JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+    <!-- Bootstrap Timepicker JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
+
+    <script src="script.js"></script>
+    
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html">
+                <span class="firstword" style="color: white;">EVENT</span>
+                <span class="space"> </span>
+                <span class="sec-word">PLANNER</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="home.html">HOME</a>
+                    </li>
+                    <li class="nav-item dropdown show">
+                        <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">EVENT</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="event.html">EVENTS</a></li>
+                            <li><a class="dropdown-item" id="makePlanLink" href="#">MAKE PLAN</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" onclick="location.href='index.html#gallery'">GALLERY</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="contact.html">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="modal" id="makePlanModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" style="color: #ff69b4; letter-spacing: 0.4rem; padding-left: 8rem;">MAKE PLAN</h3>
+                    <button type="button" class="close" id="closeBtn" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Your form goes here -->
+                    <form id="contactForm" onsubmit="submitForm(event)">
+                        <div class="form-group">
+                            <label for="userType" style="color: white;">User Type:</label>
+                            <select class="form-control" id="userType" required>
+                                <option value="student">STUDENT</option>
+                                <option value="teacher">TEACHER</option>
+                            </select>
+                        </div>
+                        <br>
+                        <label for="title" style="color: white;">Event Title:</label>
+                        <input id="title" class="form-control" type="text" required>
+                        <br>
+                        <label for="date" style="color: white;">Event Date:</label>
+                        <input id="date" type="text" class="form-control" id="eventDate" required>
+                        <br>
+                        <label for="eventTime" style="color: white;">Event Time:</label>
+                        <input id="time" class="form-control" type="text" aria-label="default input example" required>
+                        <br>
+                        <label for="exampleFormControlTextarea1" style="color: white;">Description:</label>
+                        <textarea id="messageInput" class="form-control" rows="3" required></textarea>
+                        <br>
+                        <button class="btn" type="submit" style="color: white; background-color: #ff69b4;">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="contact-info">
+
+        <h1>CONTACT US</h1>
+        <br>
+        <p>Email | creampie69@femail.com</p>
+        <p>Phone | 699-993-322</p>
+        <p>Mabini III, Tajao, Pinamungajan</p>
+        <p>12345 Riverside, Tanibag Lake</p>
+        <p>Cebu Office</p>
+        <p>Labangon Street, III de Abril</p>
+    </div>
+    <div id="socialIcons">
+        
+        <a href="https://www.facbook.com" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 124" id="Facebook">
+            <path fill="#ff69b4" fill-rule="evenodd" 
+            d="M50.1 62.4v44.4c0 .6.5 1.2 1.2 1.2h16.5c.6 0 1.2-.5 1.2-1.2V61.6h11.9c.6 0 1.1-.5 1.2-1.1l1-13.5c.1-.7-.5-1.3-1.2-1.3h-13v-9.6c0-2.3 1.8-4.1 4.1-4.1h9.2c.6 0 1.2-.5 1.2-1.2V17.3c0-.6-.5-1.2-1.2-1.2H66.6c-9.1 0-16.5 7.4-16.5 16.5v13.1h-8.2c-.6 0-1.2.5-1.2 1.2v13.6c0 .6.5 1.2 1.2 1.2h8.2v.7z" 
+            clip-rule="evenodd" class="color333033 svgShape"></path></svg>
+        </a>
+        
+            <a href="https://twitter.com" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="Twitter">
+                <path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6-18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6.8 15 2.5 22.1-80.5-4-151.9-42.6-199.6-101.3-8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7-16-.4-31-4.8-44-12.1v1.2c0 47 33.4 86.1 77.7 95-8.1 2.2-16.7 3.4-25.5 3.4-6.2 0-12.3-.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3-33.1 26-74.9 41.5-120.3 41.5-7.8 0-15.5-.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-.1-8.4-.3-12.5C462.6 146 479 129 492 109.5z" fill="#ff69b4" 
+                class="color000000 svgShape"></path></svg>
+            </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="instagram">
+                    <path d="M17.34,5.46h0a1.2,1.2,0,1,0,1.2,1.2A1.2,1.2,0,0,0,17.34,5.46Zm4.6,2.42a7.59,7.59,0,0,0-.46-2.43,4.94,4.94,0,0,0-1.16-1.77,4.7,4.7,0,0,0-1.77-1.15,7.3,7.3,0,0,0-2.43-.47C15.06,2,14.72,2,12,2s-3.06,0-4.12.06a7.3,7.3,0,0,0-2.43.47A4.78,4.78,0,0,0,3.68,3.68,4.7,4.7,0,0,0,2.53,5.45a7.3,7.3,0,0,0-.47,2.43C2,8.94,2,9.28,2,12s0,3.06.06,4.12a7.3,7.3,0,0,0,.47,2.43,4.7,4.7,0,0,0,1.15,1.77,4.78,4.78,0,0,0,1.77,1.15,7.3,7.3,0,0,0,2.43.47C8.94,22,9.28,22,12,22s3.06,0,4.12-.06a7.3,7.3,0,0,0,2.43-.47,4.7,4.7,0,0,0,1.77-1.15,4.85,4.85,0,0,0,1.16-1.77,7.59,7.59,0,0,0,.46-2.43c0-1.06.06-1.4.06-4.12S22,8.94,21.94,7.88ZM20.14,16a5.61,5.61,0,0,1-.34,1.86,3.06,3.06,0,0,1-.75,1.15,3.19,3.19,0,0,1-1.15.75,5.61,5.61,0,0,1-1.86.34c-1,.05-1.37.06-4,.06s-3,0-4-.06A5.73,5.73,0,0,1,6.1,19.8,3.27,3.27,0,0,1,5,19.05a3,3,0,0,1-.74-1.15A5.54,5.54,0,0,1,3.86,16c0-1-.06-1.37-.06-4s0-3,.06-4A5.54,5.54,0,0,1,4.21,6.1,3,3,0,0,1,5,5,3.14,3.14,0,0,1,6.1,4.2,5.73,5.73,0,0,1,8,3.86c1,0,1.37-.06,4-.06s3,0,4,.06a5.61,5.61,0,0,1,1.86.34A3.06,3.06,0,0,1,19.05,5,3.06,3.06,0,0,1,19.8,6.1,5.61,5.61,0,0,1,20.14,8c.05,1,.06,1.37.06,4S20.19,15,20.14,16ZM12,6.87A5.13,5.13,0,1,0,17.14,12,5.12,5.12,0,0,0,12,6.87Zm0,8.46A3.33,3.33,0,1,1,15.33,12,3.33,3.33,0,0,1,12,15.33Z" 
+                    fill="#ff69b4" class="color000000 svgShape"></path></svg>
+                </a>
+
+                
+    </div>
+    <div class="section-divider"></div>
+    
+    <section id="contact">
+
+        <div id="successMessage" class="alert alert-success" role="alert" style="display: none;"></div>
+        <form id="contactForm" onsubmit="submitContactForm(event)">
+            <label for="name">Name:</label>
+            <input id="name" class="form-control" type="text" placeholder="Your Name" required>
+
+            <label for="exampleFormControlInput1">Email address:</label>
+            <input id="email" type="email" class="form-control" placeholder="name@example.com" required>
+
+            <label for="phone">Phone Number:</label>
+            <input id="phone" class="form-control" type="text" placeholder="Your Phone Number" aria-label="default input example">
+
+            <label for="exampleFormControlTextarea1">Message:</label>
+            <textarea id="messageInput" class="form-control" rows="3" placeholder="Your Message"></textarea>
+
+            <button class="btn" type="submit">Submit</button>
+        </form>
+        <p id="message"></p>
+    </section>
+    
+    <script>
+        function submitContactForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('messageInput').value;
+            const successMessageElement = document.getElementById('successMessage');
+    
+            // Clear the form fields
+            document.getElementById('contactForm').reset();
+    
+            // Display a success message
+            successMessageElement.textContent = 'Form Submitted Successfully';
+            successMessageElement.style.display = 'block';
+    
+            // Clear the success message after 2 seconds
+            setTimeout(() => {
+                successMessageElement.textContent = '';
+                successMessageElement.style.display = 'none';
+                
+            }, 1500);
+        }
+    </script>
+</body>
+<footer style="background-color: rgba(11, 11, 11, 0.9); color: white; padding: 20px 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <p style="font-size: 18px; margin-left: 10px;">
+
+                    <span style="color: white; font-size: 30px;">Event</span>
+                    <span style="color: #ff69b4; font-size: 30px;">Planner</span>
+                
+                </p>
+            </div>
+            <div class="col-md-6">
+                <p class="text-right" style="font-size: 18px; margin-right: 10px;">
+                    &copy; 2023     <span style="font-size: 30px; color: WHITE;">CCTC | </span> <span style="color: white; font-size: 30px;">E</span><span style="color: #ff69b4; font-size: 30px;">P</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>EVENT PLANNER | EVENTS</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+    <style>
+       body{
+            color: white;
+
+       }
+       
+       #contactForm button {
+            background-color:#121212;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        #contactForm{
+            color: black;
+        }
+        h2{
+            color: #ff69b4!important;
+            margin-top: 10vh;
+            margin-bottom: 5vh;
+            font-size: 5vh;
+        }
+        #allSubmissions{
+            margin-top: 20vh;
+            margin-bottom: 20vh;
+            min-height: 100vh;
+            margin: 0;
+            color: white!important;
+        }
+        .boto{
+            margin-bottom: 10vh;
+            color: white!important;
+            margin-top: 2vh;
+        }
+
+        
+    </style>
+</head>
+<body>
+ 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+    
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap JS (include Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+   <!-- Bootstrap Datepicker JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+<!-- Bootstrap Timepicker JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
+
+<script src="script.js"> </script>
+
+    
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html">
+                <span class="firstword" style="color: white;">EVENT</span>
+                <span class="space"> </span>
+                <span class="sec-word">PLANNER</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="home.html">HOME</a>
+                    </li>
+                    <li class="nav-item dropdown show">
+                        <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">EVENT</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="event.html">EVENTS</a></li>
+                            <li><a class="dropdown-item" id="makePlanLink" href="#">MAKE PLAN</a></li>  
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" onclick="location.href='home.html#gallery'">GALLERY</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="contact.html">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+   
+    <section id="event">
+        <div class="modal" id="makePlanModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" style="color: #ff69b4; letter-spacing: 0.4rem; padding-left: 8rem;">MAKE PLAN</h3>
+                        <button type="button" class="close" id="closeBtn" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Your form goes here -->
+                        <div id="successMessage" class="alert alert-success"  role="alert" style="display: none;"></div>
+                        <form id="contactForm" onsubmit="submitForm(event)">
+                            <div class="form-group">
+                                <label for="userType" style="color: white;">User Type:</label>
+                                <select class="form-control" id="userType" required>
+                                    <option value="student">STUDENT</option>
+                                    <option value="teacher">TEACHER</option>
+                                </select>
+                            </div>
+                            <br>
+                            <label for="title" style="color: white;">Event Title:</label>
+                            <input id="title" class="form-control" type="text" required>
+                            <br>
+                            <label for="date" style="color: white;">Event Date:</label>
+                            <input id="date" type="text" class="form-control" id="eventDate" required>
+                            <br>
+                            <label for="eventTime" style="color: white;">Event Time:</label>
+                            <input id="time" class="form-control" type="text" aria-label="default input example" required>
+                            <br>
+                            <label for="exampleFormControlTextarea1" style="color: white;">Description:</label>
+                            <textarea id="messageInput" class="form-control" rows="3" required></textarea>
+                            <br>
+                            <button class="btn" type="submit" style="color: white; background-color: #ff69b4;">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h2 style="letter-spacing: 0.3rem;">EVENT DETAILS:</h2>
+
+        <div class="boto" onclick="redirectToEvent()">
+            <i class="fas fa-keyboard" style="font-size: 2em; cursor: pointer;"></i>
+        </div>
+        
+        
+       
+        
+
+
+        <div id="allSubmissions"></div>
+        
+        
+    </section>
+ 
+
+    
+    
+    <script>
+
+
+            
+            function redirectToEvent(){
+                window.location.href = 'event.html';
+            }
+            document.addEventListener('DOMContentLoaded', function () {
+    const makePlanModal = new bootstrap.Modal(document.getElementById('makePlanModal'), {
+        keyboard: false
+    });
+        makePlanModal.show();
+    
+});
+           
+       
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Retrieve form data array from localStorage
+    const formDataArrayString = localStorage.getItem('formDataArray');
+
+    if (formDataArrayString) {
+        const formDataArray = JSON.parse(formDataArrayString);
+
+        // Display all form submissions on the page
+        const allSubmissionsElement = document.getElementById('allSubmissions');
+
+        
+
+        formDataArray.forEach((formData, index) => {
+            const submissionDiv = document.createElement('div');
+            submissionDiv.innerHTML = `
+                <span style="color:red; text-transform: uppercase;">User Type:</span><p> ${formData.userType}</p>
+                <span style="color:red; text-transform: uppercase;">Title:</span> <p>${formData.title}</p>
+                <span style="color:red; text-transform: uppercase;">Date:</span><p> ${formData.date}</p>
+                <span style="color:red; text-transform: uppercase;">Time:</span><p> ${formData.time}</p>
+                <span style="color: red; text-transform: uppercase;">Description:</span><p> ${formData.message}</p>
+                <button style="border-radius:5px; text-transform: uppercase; background-color: red; color: white; 
+                border: 1px solid red;" onclick="deleteSubmission(${index})">Delete</button>
+                <hr>
+            `;
+            allSubmissionsElement.appendChild(submissionDiv);
+        });
+    }
+});
+
+function deleteSubmission(index) {
+    // Retrieve form data array from localStorage
+    const formDataArrayString = localStorage.getItem('formDataArray');
+
+    if (formDataArrayString) {
+        const formDataArray = JSON.parse(formDataArrayString);
+
+        // Remove the entry from the array
+        formDataArray.splice(index, 1);
+
+        // Update the localStorage with the modified array
+        localStorage.setItem('formDataArray', JSON.stringify(formDataArray));
+
+        // Reload the page to reflect the changes
+        location.reload();
+    }
+}
+
+        
+        
+</script>
+
+        
+    
+</body>
+<footer style="background-color: rgba(11, 11, 11, 0.9); color: white; padding: 20px 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <p style="font-size: 18px; margin-left: 10px;">
+
+                    <span style="color: white; font-size: 30px;">Event</span>
+                    <span style="color: #ff69b4; font-size: 30px;">Planner</span>
+                
+                </p>
+            </div>
+            <div class="col-md-6">
+                <p class="text-right" style="font-size: 18px; margin-right: 10px;">
+                    &copy; 2023     <span style="font-size: 30px; color: WHITE;">CCTC | </span> <span style="color: white; font-size: 30px;">E</span><span style="color: #ff69b4; font-size: 30px;">P</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+</html>
