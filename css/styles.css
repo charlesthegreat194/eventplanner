@@ -1,0 +1,275 @@
+body {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    margin: 0; /* Reset default margin to ensure full-width layout */
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    padding: 2em;
+    text-align: center;
+    background-color: rgba(8, 8, 8, 0.4) !important;
+    position: fixed !important;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 1em;
+    font-size: larger;
+    font-weight: bold;
+    padding-left: 20px;
+    letter-spacing: 0.1em;
+}
+
+.navbar-nav a {
+    color: white;
+    transition: 0.3s;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+}
+
+.navbar-nav a:hover {
+    color: #ff69b4 !important;
+    cursor: pointer;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+}
+
+.navbar-brand .sec-word {
+    color: #ff69b4;
+}
+
+.nav-link {
+    padding-right: 20px;
+}
+
+.navbar {
+    padding-right: 100px !important;
+}
+
+.navbar-nav .nav-item .dropdown-menu a.dropdown-item {
+    background-color: #343a40;
+    /* Dark background color */
+    color: #fff;
+    /* White text color */
+}
+
+.slogan {
+    font-size: 3em;
+    font-weight: 600;
+    margin-top: 100px;
+    color: #ff69b4;
+}
+
+.subslogan {
+    font-size: 2em;
+    font-weight: 400;
+    color: rgb(249, 247, 247);
+}
+
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+hr {
+    border: 0;
+    border-top: 2px solid #ccc;
+    margin: 20px 0;
+}
+
+.text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    color: white;
+    width: 100%;
+    margin-left: 100px;
+    margin-bottom: 200px;
+    z-index: 1;
+}
+
+.btn1 {
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: 2px solid rgb(243, 240, 243);
+    background-color: transparent;
+    color: #f1ecef;
+    margin-top: 10px;
+}
+
+.btn1:hover {
+    background-color: white;
+    color: #ff69b4;
+    
+}
+
+#background-img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: cover;
+}
+
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    /* Adjust the alpha (last parameter) to control the opacity */
+}
+
+#about {
+    margin-top: 20vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    /* Optional: Align text center if needed */
+    padding-left: 30%;
+    color: white;
+}
+
+#event {
+    margin-top: 150px;
+    padding-left: 100px;
+}
+
+#eventForm {
+    padding-top: 50px;
+}
+
+.navbar-nav .nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+/* Optional: To make the dropdown appear above the parent item */
+.navbar-nav .nav-item:hover .dropdown-menu {
+    top: 100%;
+    bottom: auto;
+}
+
+.navbar-nav .nav-item.dropdown .dropdown-menu {
+    background-color: #343a40;
+    /* Set background color to dark */
+    border: none;
+    /* Remove borders */
+    box-shadow: none;
+    /* Remove box shadow */
+}
+
+.navbar-nav .nav-item.dropdown .dropdown-menu .dropdown-item {
+    color: white !important;
+    /* Set text color to white */
+}
+
+.navbar-nav .nav-item.dropdown .dropdown-menu .dropdown-item:hover {
+    color: #ff69b4 !important;
+}
+.navbar-toggler{
+    border-radius: 5px;
+}
+
+.modal-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    
+}
+.modal-content{
+    background-color: #161616!important ;
+    border-radius: 10px;
+    border:  1px solid #ff69b4!important;
+}
+.modal-body{
+    color: white!important;
+    border: 1px solid #ff69b4;
+    border-radius: 10px ;
+   
+}
+.close{
+    color: white;
+     background-color: #ff69b4;
+      border: 1px solid #ff69b4;
+     border-radius: 5px;
+     font-size: 20px;
+}
+.alert-success{
+    background-color: aquamarine;
+    color: white;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+footer a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 1em;
+        /* Reduce padding for smaller screens */
+    }
+
+    nav a {
+        margin: 0.5em;
+        /* Reduce margin for menu items */
+    }
+
+    .navbar {
+        padding-right: 20px !important;
+        /* Adjust padding for better responsiveness */
+    }
+
+    .text-container {
+        margin-left: 20px;
+        /* Adjust margin for better readability on smaller screens */
+        margin-bottom: 100px;
+        /* Reduce margin for better spacing */
+        top: 40%;
+        /* Adjust position from top */
+    }
+
+    #about {
+        padding-left: 10%;
+        /* Adjust padding for better centering */
+    }
+
+    #event {
+        padding-left: 20px;
+        /* Adjust padding for better spacing */
+    }
+
+    #eventForm {
+        padding-top: 20px;
+        /* Adjust padding for better spacing */
+    }
+
+    #background-img {
+        margin-top: 56px;
+        /* Add margin to make space for the fixed navbar */
+    }
+}
